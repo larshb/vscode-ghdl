@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			/* Run once. Uses "GHDL -s" and VS Code problem matcher to check syntax in background */
+			"label": "VHDL syntax-check server",
+			"type": "shell",
+			"command": "./ghdl-watch",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "ghdl",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": {
+					"regexp": "^(?<file>[^:]+):(?<line>[\\d]+):(?<column>[\\d]+): (?<message>.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"message": 4
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^.*MODIFY.*$",
+					"endsPattern": "^.*Setting up.*$"
+				}
+			},
+			"group": "build"
+		},
+		{
+			/* Build GHDL-project using Makefile. (preLaunchTask) */
+			"label": "Build: VHDL-project",
+			"type": "shell",
+			"command": "make",
+			"problemMatcher": {
+				"owner": "ghdl",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": {
+					"regexp": "^(?<file>[^:]+):(?<line>[\\d]+):(?<column>[\\d]+): (?<message>.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"message": 4
+				}
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

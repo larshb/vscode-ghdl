@@ -1,0 +1,4 @@
+# GHDL generated files
+hello_world
+*.cf
+*.o

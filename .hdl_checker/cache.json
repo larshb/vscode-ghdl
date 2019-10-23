@@ -1,0 +1,23 @@
+{
+ "builder": {
+  "_logger": "hdl_checker.builders.fallback", 
+  "_version": "<undefined>", 
+  "__class__": "Fallback", 
+  "_work_folder": "/home/Lars/git/vscode-ghdl/.hdl_checker", 
+  "_added_libraries": [], 
+  "_database": {
+   "sources": [], 
+   "inferred_libraries": [], 
+   "__class__": "Database", 
+   "design_units": []
+  }, 
+  "_builtin_libraries": []
+ }, 
+ "config_file": null, 
+ "database": {
+  "sources": [], 
+  "inferred_libraries": [], 
+  "__class__": "Database", 
+  "design_units": []
+ }
+}

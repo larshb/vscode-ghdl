@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while inotifywait -e modify *.vhd
+do 
+    ghdl -s -v *.vhd
+done
